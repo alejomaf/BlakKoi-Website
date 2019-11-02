@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Cargamos el scrip de jQuery para poder realizar inserciones de codigo seguras-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+  /*Funcion que hace aparecer y desaparecer la barra de busqueda*/
+
+  function aparecerBarra(){
+    var cuadrado=document.getElementById("square");
+    var barra=document.getElementById("sidebar");
+
+    if(barra.style.width!="0%"){
+        barra.style.width="0%";
+        cuadrado.style.width="100%";
+        }
+    else {
+        barra.style.width="100%";
+        cuadrado.style.width="0%";
+        }
+    
+  }
+  function cargarPortfolio(){
+    /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
+    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
+    inserción de código */
+
+    $('#square').load('portfolio.html #contenido');
+  }
+  
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../styles/estiloVistaPrincipal.css">
+</head>
+
+<!--Cuerpo-->
+<body>
+
+    <button class="btn" style="float: right"><i class="fa fa-home"></i>  Cerrar Sesión</button>
+    <button class="closer" title="Close sidebar" onclick=aparecerBarra()>☰</button>
+
+  <div id="sidebar">  
+    <div class="logo"><img src="../../images/logoSinLetras.jpeg"
+    style="max-width:100%;"></div>
+    <img class="logo"></a>
+    <a class="active" href="#home">Inicio</a>
+    <a class="special" href="#personalZone">ZonaPersonal</a>
+    <a href="#news">Servicios</a>
+    <a href="#contact">Solicitud presupuesto</a>
+    <a href="#porfolio" onclick="cargarPortfolio();">Trabajos</a>
+    <a href="#about">Contacta</a>
+    <a href="#about">Información</a>
+    <a href="#about">Blog</a>
+
+  </div>
+
+
+  <div class="content">
+    <div id="square">
+      
+    </div>
+  </div>
+
+</body> 
+</html>
