@@ -24,6 +24,133 @@ body{
     background-color: rgba(255,255,255,.5);
     transition: width .35s;
     overflow-y: scroll;
+
+    /*BORRAR MÁS TARDE contenido para ir probando*/
+  }
+  /*
+#square div{
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0.061);
+  border-style: groove;
+  width: 35vh;
+  margin: 3px;
+}*/
+
+/*Este es el popup del inicio de sesión*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.box{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  text-align: center;
+}
+.box h1{
+  margin-top: 15%;
+  color:white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type="text"],.box input[type="password"]{
+  margin-top: 100px;
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 40%;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+.box input[type= "submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.contenedor{
+  display: inline;
+  
+}
+input[type= "registrar"],input[type="recordar"]{
+  border: 0;
+  background: none;
+
+  
+  
+  text-align: center;
+  
+  
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type= "submit"]:hover{
+  background: #2ecc71;
+}
+
+
+/*Gestión del contenido*/
+#contenido{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*Contenido dentro del cuadro*/
+#contenido div{
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0.061);
+  border-style: groove;
+  width: 35vh;
+  margin: 3px;
+}
+
+
+  #imagen{
+    width: 35vh;
+    height: 35vh;
   }
   
   /*Barra lateral*/

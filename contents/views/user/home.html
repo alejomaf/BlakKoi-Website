@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <!-- Cargamos el scrip de jQuery para poder realizar inserciones de codigo seguras-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -22,14 +21,27 @@
         }
     
   }
+  function cargarServicios(){
+    /*Estamos cargando en el elemento square el elemento con id= "contenido" de servicios.html
+    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
+    inserción de código */
+    $('#square').empty();
+    $('#square').load('../generic-views/servicios.html #contenido');
+  }
   function cargarPortfolio(){
     /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
     para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
     inserción de código */
-
-    $('#square').load('portfolio.html #contenido');
+    $('#square').empty();
+    $('#square').load('../generic-views/portfolio.html #contenido');
   }
-  
+  function cargarContacta(){
+    /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
+    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
+    inserción de código */
+    $('#square').empty();
+    $('#square').load('../generic-views/contacta.html #contenido');
+  }
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +54,23 @@
 <!--Cuerpo-->
 <body>
 
-    <button class="btn" style="float: right"><i class="fa fa-home"></i>  Iniciar sesión</button>
+<!--FORMULARIO DE INICIO DE SESIÓN-->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="box" action="index.html" method="POST">
+    <h1>Login</h1>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input onclick="document.getElementById('id01').style.display='none'" type="submit" name="Login" value="Login">
+    <div class="contenedor">
+        <input type="registrar" name="Login" value="Registrarse">
+        <input type="recordar" name="Login" value="Recordar contraseña">
+    </div>
+    
+  </form>
+</div>
+
+    <button class="btn" style="float: right" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-home "></i>  Iniciar sesión</button>
     <button class="closer" title="Close sidebar" onclick=aparecerBarra()>☰</button>
 
   <div id="sidebar">  
@@ -50,21 +78,31 @@
     style="max-width:100%;"></div>
     <img class="logo"></a>
     <a class="active" href="#home">Inicio</a>
-    <a href="#news">Servicios</a>
-    <a href="#contact">Solicitud presupuesto</a>
-    <a href="#porfolio" onclick="cargarPortfolio();">Trabajos</a>
+    <a href="#news" onclick="cargarServicios();">Servicios</a>
+    <a href="#contact" onclick="cargarPortfolio();">Solicitud presupuesto</a>
+    <a href="#porfolio" onclick="cargarPortfolio();">Portfolio</a>
     <a href="#about">Contacta</a>
-    <a href="#about">Información</a>
     <a href="#about">Blog</a>
 
   </div>
 
 
   <div class="content">
-    <div id="square">
-      
+    <div id="square"> 
+        
     </div>
   </div>
 
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 </body> 
 </html>
