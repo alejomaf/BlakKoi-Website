@@ -22,25 +22,27 @@
     
   }
   function cargarServicios(){
-    /*Estamos cargando en el elemento square el elemento con id= "contenido" de servicios.html
+    /*Estamos cargando en el elemento square el elemento con id= "servicios" de servicios.html
     para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
     inserción de código */
     $('#square').empty();
-    $('#square').load('../generic-views/servicios.html #contenido');
+    $('#square').load('../generic-views/generic-views.html #servicios');
   }
   function cargarPortfolio(){
-    /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
-    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
-    inserción de código */
     $('#square').empty();
-    $('#square').load('../generic-views/portfolio.html #contenido');
+    $('#square').load('../generic-views/generic-views.html #portfolio');
   }
   function cargarContacta(){
-    /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
-    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
-    inserción de código */
     $('#square').empty();
-    $('#square').load('../generic-views/contacta.html #contenido');
+    $('#square').load('../generic-views/generic-views.html #contacta');
+  }
+  function cargarPresupuesto(){
+    $('#square').empty();
+    $('#square').load('../generic-views/generic-views.html #presupuesto');
+  }
+  function cargarBlog(){
+    $('#square').empty();
+    $('#square').load('../generic-views/generic-views.html #blog');
   }
 </script>
 
@@ -78,11 +80,11 @@
     style="max-width:100%;"></div>
     <img class="logo"></a>
     <a class="active" href="#home">Inicio</a>
-    <a href="#news" onclick="cargarServicios();">Servicios</a>
-    <a href="#contact" onclick="cargarPortfolio();">Solicitud presupuesto</a>
+    <a href="#services" onclick="cargarServicios();">Servicios</a>
+    <a href="#solicitudPresupuesto" onclick="cargarPresupuesto();">Solicitud presupuesto</a>
     <a href="#porfolio" onclick="cargarPortfolio();">Portfolio</a>
-    <a href="#about">Contacta</a>
-    <a href="#about">Blog</a>
+    <a href="#contact" onclick="cargarContacta();">Contacta</a>
+    <a href="#blog" onclick="cargarBlog();">Blog</a>
 
   </div>
 
@@ -92,6 +94,7 @@
         
     </div>
   </div>
+
 
   <script>
     // Get the modal
