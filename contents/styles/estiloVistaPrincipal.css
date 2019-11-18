@@ -33,7 +33,7 @@ body{
 /*PORTFOLIO, SERVICIOS Y BLOG*/
 
 /*Gestión del contenido*/
-#portfolio, #servicios{
+#portfolio, #servicios, #videos{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -43,7 +43,7 @@ body{
 
 
 /*Contenido dentro del cuadro*/
-#portfolio div, #servicios div{
+#portfolio div, #servicios div, #videos div{
   border-width: 2px;
   background: rgba(0, 0, 0, 0.061);
   /*border-style: groove;*/
@@ -147,6 +147,39 @@ body{
   margin: 3px;
 }
 
+/*---------------------ZONA PERSONAL---------------------*/
+
+/*Proyectos*/
+
+#proyectos div{
+  background: rgba(138, 132, 223, 0.185);
+}
+
+/*Proyectos pendientes*/
+
+#proyectosPendientes div{
+  background: rgba(138, 132, 223, 0.185);
+}
+
+/*Mensajes*/
+
+#messages{
+  background: rgba(138, 132, 223, 0.185);
+}
+
+#messages div #title{
+  margin-left: 1%;
+  margin-right: 15%;
+}
+
+#messages div #body{
+  margin-right: 48%;
+}
+
+/*Datos personales*/
+
+
+/*---------------------Contenidos genérico---------------------*/
 
 /*BARRA LATERAL*/
 
