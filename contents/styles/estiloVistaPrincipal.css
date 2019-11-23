@@ -12,24 +12,6 @@ body{
 }
 
 
-/*CUADRO PRINCIPAL*/
-
-#square {
-    height: 76vh; /*79vh*/
-    width: 80%; /*82vw*/
-    margin-top: 3%;
-    margin-right: 5%;
-    margin-left: 155px;
-    margin-bottom: 2%;
-    background-color: rgba(255,255,255,.5);
-    transition: width .35s;
-    overflow-y: scroll;
-    
-  }
-
-
-
-
 /*PORTFOLIO, SERVICIOS Y BLOG*/
 
 /*Gestión del contenido*/
@@ -180,6 +162,20 @@ body{
 
 
 /*---------------------Contenidos genérico---------------------*/
+/*CUADRO PRINCIPAL*/
+
+#square {
+  height: 76vh; /*79vh*/
+  width: 80%; /*82vw*/
+  margin-top: 3%;
+  margin-right: 5%;
+  margin-left: 155px;
+  margin-bottom: 2%;
+  background-color: rgba(255,255,255,.5);
+  transition: width .35s;
+  overflow-y: scroll;
+  
+}
 
 /*BARRA LATERAL*/
 

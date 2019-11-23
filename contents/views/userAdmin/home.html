@@ -22,12 +22,26 @@
         }
     
   }
-  function cargarPortfolio(){
+  function cargarGestionUsuarios(){
     /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
     para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
     inserción de código */
-
-    $('#square').load('portfolio.html #contenido');
+    $('#square').empty();
+    $('#square').load('../special-views/admin-view.html #gestionUsuarios');
+  }
+  function cargarGestionPortfolio(){
+    /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
+    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
+    inserción de código */
+    $('#square').empty();
+    $('#square').load('../special-views/admin-view.html #gestionPortfolio');
+  }
+  function cargarGestionBlog(){
+    /*Estamos cargando en el elemento square el elemento con id= "contenido" de portfolio.html
+    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
+    inserción de código */
+    $('#square').empty();
+    $('#square').load('../special-views/admin-view.html #gestionarBlog');
   }
   
 </script>
@@ -50,18 +64,53 @@
     style="max-width:100%;"></div>
     <img class="logo"></a>
     <a class="active" href="#home">Inicio</a>
-    <a href="#gestUser">Gestión de usuarios</a>
-    <a href="#gestPort">Gestión del portfolio</a>
-    <a href="#modInf" ">Modificar información</a>
-    <a href="#gestBlog">Gestionar blog</a>
-    <a href="#manageUsers">Administrar usuarios</a>
+    <a href="#gestUser" onclick="cargarGestionUsuarios();">Gestión de usuarios</a>
+    <a href="#gestPort" onclick="cargarGestionPortfolio();">Gestión del portfolio y modificar información del inicio</a>
+    <a href="#gestBlog" onclick="cargarGestionBlog();">Gestionar blog</a>
 
   </div>
 
 
   <div class="content">
     <div id="square">
-      
+      <div id="gestionUsuarios">
+
+        <div class="options_container">
+
+          <div class="addremove">
+            <div class="añadirEliminarUsuario">
+                <button class="button"><div class="plus"><img src="../../images/plus.png"></div></button>
+                <button class="button"><div class="trash"><img src="../../images/trash.png"></div></button>
+          
+                <button class="button1"><div class="mail"><img src="../../images/mail.svg"></div></button>
+                <button class="button1"><div class="addVideo"><img src="../../images/addVideo.png"></div></button>
+                <button class="button1"><div class="addVideo"><img src="../../images/modifyUser.png"></div></button>
+                <button class="button">Gestionar Encargos</button>
+                <button class="button">Actualizar contenido</button>
+    
+            </div>
+          </div>    
+        
+        <div id="titulo"><p><b>Lista de usuarios</b></p></div>
+
+         <div class="users_container">
+    
+            <div class="grid-container">
+            <div>Usuario de ejemplo</div>
+            <div>Usuario de ejemplo</div>
+            <div>Usuario de ejemplo</div>
+            <div>Usuario de ejemplo</div>
+            <div>Usuario de ejemplo</div>
+            <div>Usuario de ejemplo</div>
+            <div>Usuario de ejemplo</div>
+            <div>Usuario de ejemplo</div>
+         </div>
+    
+        </div>
+    
+    </div>
+
+    <!--FIN del square-->
     </div>
   </div>
 
