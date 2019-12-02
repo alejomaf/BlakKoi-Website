@@ -10,7 +10,30 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
- /*---------------------Contenidos genérico---------------------*/
+
+/*---------------------Contenido---------------------*/
+
+/*GESTIÓN DEL PORTFOLIO Y MODIFICAR INFORMACIÓN DEL INICIO*/
+.grid-container div{
+  text-align: justify;
+}
+
+.grid-container div #middle {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-container div u {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-container div #right {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+ /*---------------------Decoración---------------------*/
 
  /*Gestion de usuarios*/
 

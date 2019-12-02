@@ -5,7 +5,6 @@ html{
   /*Cuerpo principal*/
 
 body{
-    background-image: url("../images/fondoInicio.jpeg");
     font-family: "Lato", sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
@@ -162,24 +161,51 @@ body{
 
 
 /*---------------------Contenidos genérico---------------------*/
+
+/*Fondo de pantalla*/
+#backgroundImages {
+  background-image: url("../../images/fondos/fondo1.jpeg") no-repeat center center;
+  transition: background 3s;
+  min-height:100vh;
+  position:relative;
+}
+
+/*Cuadro INICIO*/
+div#texttop { 
+	color: #fff;
+	width: 30%;
+	top: 50%;
+	left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+	padding: 2rem;
+	background: rgba(0,0,0,0.3);
+	font-family: Oxygen, sans-serif;
+  position:absolute;
+}
+
 /*CUADRO PRINCIPAL*/
 
 #square {
-  height: 76vh; /*79vh*/
-  width: 80%; /*82vw*/
-  margin-top: 3%;
+  height: 92vh; /*79vh*/
+  width: 88%; /*82vw*/
+  margin-top: 2%;
   margin-right: 5%;
   margin-left: 155px;
   margin-bottom: 2%;
   background-color: rgba(255,255,255,.5);
   transition: width .35s;
   overflow-y: scroll;
+  border-radius: 15px;
   
 }
 
 /*BARRA LATERAL*/
 
-#sidebar {
+#bar{
+  position:fixed;
+  width:150px;
+}
+#sidebar{
     /*margin-left: 1.5%;*/
     overflow-x: hidden; /*COMANDO MUY IMPORTANTE, lo oculta todo muy bien*/
     overflow-y: scroll;
@@ -188,7 +214,12 @@ body{
     /*border: 1px solid black;*/
     transition: width .35s;
     margin-right: 1.5%;
+    border-radius: 15px;
   }
+#content{
+  border-radius: 15px;
+}
+
 
   /*Barra escondida*/
   
@@ -218,15 +249,15 @@ body{
     background-color: #555;
     color: white;
   }
-/*Boton*/
 
-.btn {
-    background-color: DodgerBlue;
-    border: none;
+
+/*Botón iniciar sesión*/
+#sidebar .btn {
+    background: DodgerBlue;
     color: white;
-    padding: 0.75% 1%;
-    font-size: 16px;
   }
+
+  
 
 .closer {
   color: red;
@@ -235,6 +266,7 @@ body{
   background-color: dodgerblue;
   cursor: pointer;
   visibility: hidden;
+  position:fixed;
 }
 
 /*Elemento visual muy importante, oculta el scrollbar pero hace que siga funcionando
@@ -278,7 +310,8 @@ script para aplicarlo cuando se cambie de ventana*/
     #square{
       width:0%;
       margin-left:0%;
-      margin-right:0%;
+      margin-right:0%; 
+      border-radius: 15px;
     }
     .closer{
       visibility: visible;
@@ -318,22 +351,29 @@ script para aplicarlo cuando se cambie de ventana*/
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
+  background-color: rgba(255, 255, 255, 0.37);
   padding-top: 50px;
 }
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+/*Botón de salir*/
+#out{
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  float: right;
+  margin-left: 150px;
+  margin-top: 10px;
 }
+/*Cuadro pricipal*/
 .box{
+  width: 400px;
+  height: 400px;
   position: absolute;
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background: rgba(0, 0, 0, 0.061);
+  background: black;
   text-align: center;
+  border-radius: 15px;
 }
 .box h1{
   margin-top: 15%;
@@ -341,7 +381,7 @@ script para aplicarlo cuando se cambie de ventana*/
   text-transform: uppercase;
   font-weight: 500;
 }
-.box input[type="text"],.box input[type="password"]{
+input[type="text"],.box input[type="password"]{
   margin-top: 100px;
   border: 0;
   background: none;
@@ -350,20 +390,21 @@ script para aplicarlo cuando se cambie de ventana*/
   text-align: center;
   border: 2px solid #3498db;
   padding: 14px 10px;
-  width: 40%;
+  width: 80%;
   outline: none;
   color: white;
   border-radius: 24px;
   transition: 0.25s;
 }
-.box input[type="text"]:focus,.box input[type="password"]:focus{
+input[type="text"]:focus,.box input[type="password"]:focus{
   width: 280px;
   border-color: #2ecc71;
 }
-.box input[type= "submit"]{
+ input[type= "submit"]{
   border: 0;
   background: none;
   display: block;
+  width: 200px;
   margin: 20px auto;
   text-align: center;
   border: 2px solid #2ecc71;
@@ -374,19 +415,23 @@ script para aplicarlo cuando se cambie de ventana*/
   transition: 0.25s;
   cursor: pointer;
 }
-.contenedor{
-  display: inline;
-  
+a{
+  color: white;
 }
+.contenedor{
+  margin-top: 5%;
+}
+
 input[type= "registrar"],input[type="recordar"]{
   border: 0;
-  background: none; 
+  background: none;
   text-align: center;
   outline: none;
   color: white;
   border-radius: 24px;
   transition: 0.25s;
   cursor: pointer;
+  
 }
 
 .box input[type= "submit"]:hover{

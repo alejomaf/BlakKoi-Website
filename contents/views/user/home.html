@@ -44,6 +44,29 @@
     $('#square').empty();
     $('#square').load('../generic-views/generic-views.html #blog');
   }
+
+  var bgImageArray = ["fondo1.jpeg", "fondo2.jpg", "fondo3.jpg", "fondo4.jpeg"],
+  base = "../../images/fondos/",
+  secs = 7;
+  bgImageArray.forEach(function(img){
+      new Image().src = base + img; 
+      // caches images, avoiding white flash between background replacements
+  });
+
+  function backgroundSequence() {
+    window.clearTimeout();
+    var k = 0;
+    for (i = 0; i < bgImageArray.length; i++) {
+      setTimeout(function(){ 
+        var aux=document.getElementById('backgroundImages');
+        aux.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center";
+        aux.style.backgroundSize ="cover";
+      if ((k + 1) == bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }			
+      }, (secs * 1000) * i)	
+    }
+  }
+  backgroundSequence();
+
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,38 +77,39 @@
 </head>
 
 <!--Cuerpo-->
-<body>
+<body id="backgroundImages">
 
 <!--FORMULARIO DE INICIO DE SESIÓN-->
 <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  
   <form class="box" action="index.html" method="POST">
-    <h1>Login</h1>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    <input onclick="document.getElementById('id01').style.display='none'" type="submit" name="Login" value="Login">
-    <div class="contenedor">
-        <input type="registrar" name="Login" value="Registrarse">
-        <input type="recordar" name="Login" value="Recordar contraseña">
-    </div>
-    
-  </form>
+      <img id="out" src="../../images/crossWhite.jpg" onclick="document.getElementById('id01').style.display='none'">
+      <h1>Login</h1>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="submit" name="Login" value="Login">
+      <div class="contenedor">
+        <div><a href="registrarse.html">Recordar contraseña</a></div> <p></p>
+          <div> <a href="registrarse.html">Registrarse</a></div>
+      </div>
+      
+    </form>
 </div>
-
-    <button class="btn" style="float: right" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-home "></i>  Iniciar sesión</button>
-    <button class="closer" title="Close sidebar" onclick=aparecerBarra()>☰</button>
-
-  <div id="sidebar">  
-    <div class="logo"><img src="../../images/logoSinLetras.jpeg"
-    style="max-width:100%;"></div>
-    <img class="logo"></a>
+  <button class="closer" title="Close sidebar" onclick=aparecerBarra()>☰</button>
+  <div id="bar"> 
+      <div class="logo"><img src="../../images/logoSinLetrasCircular.png"
+      style="max-width:100%;"></div>
+  <div id="sidebar"> 
     <a class="active" href="#home">Inicio</a>
     <a href="#services" onclick="cargarServicios();">Servicios</a>
     <a href="#solicitudPresupuesto" onclick="cargarPresupuesto();">Solicitud presupuesto</a>
     <a href="#porfolio" onclick="cargarPortfolio();">Portfolio</a>
     <a href="#contact" onclick="cargarContacta();">Contacta</a>
     <a href="#blog" onclick="cargarBlog();">Blog</a>
-
+    
+    <a class="btn" onclick="document.getElementById('id01').style.display='block'"> Iniciar sesión</a>
+  </div>
+  
   </div>
 
 
