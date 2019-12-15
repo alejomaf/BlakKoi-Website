@@ -3,48 +3,8 @@
 <head>
 <!-- Cargamos el scrip de jQuery para poder realizar inserciones de codigo seguras-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../scripts/scriptGeneral.js"></script>
 
-<script>
-  /*Funcion que hace aparecer y desaparecer la barra de busqueda*/
-
-  function aparecerBarra(){
-    var cuadrado=document.getElementById("square");
-    var barra=document.getElementById("sidebar");
-
-    if(barra.style.width!="0%"){
-        barra.style.width="0%";
-        cuadrado.style.width="100%";
-        }
-    else {
-        barra.style.width="100%";
-        cuadrado.style.width="0%";
-        }
-    
-  }
-  function cargarServicios(){
-    /*Estamos cargando en el elemento square el elemento con id= "servicios" de servicios.html
-    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
-    inserción de código */
-    $('#square').empty();
-    $('#square').load('../generic-views/generic-views.html #servicios');
-  }
-  function cargarPortfolio(){
-    $('#square').empty();
-    $('#square').load('../generic-views/generic-views.html #portfolio');
-  }
-  function cargarContacta(){
-    $('#square').empty();
-    $('#square').load('../generic-views/generic-views.html #contacta');
-  }
-  function cargarPresupuesto(){
-    $('#square').empty();
-    $('#square').load('../generic-views/generic-views.html #presupuesto');
-  }
-  function cargarBlog(){
-    $('#square').empty();
-    $('#square').load('../generic-views/generic-views.html #blog');
-  }
-</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -54,24 +14,25 @@
 </head>
 
 <!--Cuerpo-->
-<body>
+<body id="backgroundImages">
 
-    <button class="btn" style="float: right" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-home "></i>  Cerrar sesión</button>
+
     <button class="closer" title="Close sidebar" onclick=aparecerBarra()>☰</button>
-
+    <div id="bar"> 
+        <div class="logo"><img src="../../images/logoSinLetrasCircular.png"
+        style="max-width:100%;"></div>
   <div id="sidebar">  
-    <div class="logo"><img src="../../images/logoSinLetras.jpeg"
-    style="max-width:100%;"></div>
-    <img class="logo"></a>
-    <a class="active" href="#home">Inicio</a>
-    <a class="special" href="#personalZone">ZonaPersonal</a>
-    <a href="#services" onclick="cargarServicios();">Servicios</a>
-    <a href="#solicitudPresupuesto" onclick="cargarPresupuesto();">Solicitud presupuesto</a>
-    <a href="#porfolio" onclick="cargarPortfolio();">Portfolio</a>
-    <a href="#contact" onclick="cargarContacta();">Contacta</a>
-    <a href="#blog" onclick="cargarBlog();">Blog</a>
-
+      <a class="active" href="#home" onclick="cargar('#inicio');">Inicio</a>
+      <a class="special" href="zonaPersonal.html">ZonaPersonal</a>
+      <a class="btn" href="#services" onclick="cargar('#servicios');">Servicios</a>
+      <a class="btn" href="#solicitudPresupuesto" onclick="cargar('#presupuesto');">Solicitud presupuesto</a>
+      <a class="btn" href="#porfolio" onclick="cargar('#portfolio');">Portfolio</a>
+      <a class="btn" href="#contact" onclick="cargar('#contacta');">Contacta</a>
+      <a class="btn" href="#blog" onclick="cargar('#blog');">Blog</a>
+      
+      <a class="btnSpe" href="../user/home.html">Cerrar sesión</a>
   </div>
+    </div>
 
 
   <div class="content">
@@ -80,7 +41,48 @@
     </div>
   </div>
 
+<script>
+/*Inicio*/
+    
+var x=1;
+    $('#square').load('../generic-views/generic-views.html #inicio');
+    function temporizador(){
+      cambiarTexto(x);
+      if(x==4)x=1;else x++;
+    }
+    setInterval(temporizador,10000);
 
+    function cambiarTexto(aux2){
+      var modal = document.getElementById('texttop'+aux2);
+      var borrar;
+      if(aux2==1){
+      borrar=document.getElementById('texttop4');
+      }else{
+      borrar=document.getElementById('texttop'+(aux2-1));
+      }
+      borrar.style.display="none";
+      modal.style.display="block";
+    }
+    
+    /*Botones activos*/
+
+    // Coge el cuadro del contenido
+    var btnContainer = document.getElementById("sidebar");
+
+    // Coge todos los botones de la clase boton dentro del div
+    var btns = btnContainer.getElementsByClassName("btn");
+
+    btnContainer.getElementsByClassName("active")[0].addEventListener("click", cambioBotones);
+    // Va cambiando los botones
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", cambioBotones);
+    }
+    function cambioBotones(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace("active", "btn");
+        this.className += " active";
+      }
+</script>
 </body> 
 </html>
 

@@ -1,6 +1,5 @@
 html{
   height: 100%;
-  widht: 100%;
 }
   /*Cuerpo principal*/
 
@@ -10,6 +9,53 @@ body{
     background-repeat: no-repeat;
 }
 
+/*---------------------Administrador--------------------*/
+/*---------------------Contenido---------------------*/
+
+/*GESTIÓN DEL PORTFOLIO Y MODIFICAR INFORMACIÓN DEL INICIO*/
+.grid-container div{
+  text-align: justify;
+}
+
+.grid-container div #middle {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-container div u {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-container div #right {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+ /*---------------------Decoración---------------------*/
+
+ /*Gestion de usuarios*/
+
+ #gestionUsuarios{
+   align-content: flex-start;
+ }
+ #gestionUsuarios .options_container{
+  align-content: flex-start;
+}
+.plus img, .trash img, .mail img, .addVideo img{
+  width: 7vh;
+}
+.options_container p{
+  text-align: center;
+  justify-content: center;
+}
+
+#titulo{
+  background: rgba(116, 93, 143, 0.404);
+}
+#titulo p{
+  text-align: left;
+}
 
 /*PORTFOLIO, SERVICIOS Y BLOG*/
 
@@ -56,55 +102,18 @@ body{
   
 /*FORMULARIO PRESUPUESTO*/
 #presupuesto{
-  border-width: 2px;
-  border-color: rgba(0, 0, 0, 0.061);
-  border-style: groove;
-  width: 35vh;
-  margin: 3px;
-  flex-wrap: wrap;
+  display: block;
+  text-align: center;
+  margin-top: 0%;
+  width: 70vh;
   align-items: center;
   justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10vh;
 }
-
-#presupuesto p{
-  color: black;
-}
-
-#presupuesto input[type="text"]{
-  margin-left: 20%;
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #00fdc6;
-  padding: 14px 10px;
-  width: 60%;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
-}
-#presupuesto input[type="button"]{
-  margin-left: 20%;
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  margin-top: 10%;
-  text-align: center;
-  border: 2px solid #0b0c0c;
-  padding: 14px 10px;
-  width: 20%;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
-  cursor: pointer;
-}
-#presupuesto input[type="button"]:hover{
-  background: #2ecc71;
-  
+#descripcion{
+  font-size: small;
 }
 
 /*BLOG*/
@@ -196,13 +205,13 @@ div#texttop {
   transition: width .35s;
   overflow-y: scroll;
   border-radius: 15px;
-  
+  position: fixed;
 }
 
 /*BARRA LATERAL*/
 
 #bar{
-  position:fixed;
+  position: fixed;;
   width:150px;
 }
 #sidebar{
@@ -252,7 +261,7 @@ div#texttop {
 
 
 /*Botón iniciar sesión*/
-#sidebar .btn {
+#sidebar .btnSpe {
     background: DodgerBlue;
     color: white;
   }
@@ -321,6 +330,7 @@ script para aplicarlo cuando se cambie de ventana*/
 
   /*Entrada de texto en formularios*/
   
+  /*Estilo bueno*/
   input[type=text], input[type=email], select, textarea {
     width: 100%;
     padding: 12px;
@@ -381,7 +391,7 @@ script para aplicarlo cuando se cambie de ventana*/
   text-transform: uppercase;
   font-weight: 500;
 }
-input[type="text"],.box input[type="password"]{
+input[type="textI"],.box input[type="passwordI"]{
   margin-top: 100px;
   border: 0;
   background: none;
@@ -398,7 +408,6 @@ input[type="text"],.box input[type="password"]{
 }
 input[type="text"]:focus,.box input[type="password"]:focus{
   width: 280px;
-  border-color: #2ecc71;
 }
  input[type= "submit"]{
   border: 0;
