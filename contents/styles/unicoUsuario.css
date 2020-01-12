@@ -1,6 +1,6 @@
 html{
   height: 100%;
-  widht: 100%;
+  width: 100%;
 }
   /*Cuerpo principal*/
 
@@ -10,30 +10,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-/*---------------------Contenido---------------------*/
-
-/*GESTIÓN DEL PORTFOLIO Y MODIFICAR INFORMACIÓN DEL INICIO*/
-.grid-container div{
-  text-align: justify;
-}
-
-.grid-container div #middle {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.grid-container div u {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.grid-container div #right {
-  margin-right: auto;
-  margin-left: auto;
-}
-
- /*---------------------Decoración---------------------*/
+ /*---------------------Contenidos genérico---------------------*/
 
  /*Gestion de usuarios*/
 
@@ -56,13 +33,6 @@ body{
 }
 #titulo p{
   text-align: left;
-}
-
-.contenedor_oscuro{
-  background: rgba(122, 57, 196, 0.404);
-}
-.contenedor_claro{
-  background: rgba(161, 24, 24, 0.404);
 }
 
 /*---------------------Contenidos genérico---------------------*/
@@ -116,8 +86,96 @@ background-color: skyblue;
 color: white;
 }
 
-/*Hacemos que el enlace activo no lleve a ningun sitio*/
-a.active:link, a.active:visited{}
+
+ h1{
+  margin-top: 15%;
+  color:white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+input[type=text], select, textarea {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 0.5%;
+  margin-left: 15%;
+  
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  margin-left: 45%;
+  width: 20%;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+  margin-left: 25%;;
+}
+
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
 
 #sidebar a:hover:not(.active) {
   background-color: #555;

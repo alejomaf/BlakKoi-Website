@@ -9,6 +9,51 @@ body{
     background-repeat: no-repeat;
 }
 
+ /*Gestion de usuarios*/
+  
+ #user{
+   position: relative;
+   margin-top: 0%;
+   margin-right: 1%;
+   float: right;
+   color: white;
+   text-decoration: underline white;
+ }
+ #gestionUsuarios{
+  align-content: flex-start;
+}
+#gestionUsuarios .options_container{
+ align-content: flex-start;
+}
+.plus img, .trash img, .mail img, .addVideo img{
+ width: 7vh;
+}
+.options_container p{
+ text-align: center;
+ justify-content: center;
+}
+
+#titulo{
+ background: rgba(116, 93, 143, 0.404);
+}
+#titulo p{
+ text-align: left;
+}
+.contenedor_oscuro{
+  background: rgba(0, 0, 0, 0.404);
+  cursor: pointer;
+}
+.contenedor_claro{
+  background: rgba(184, 160, 160, 0.404);
+  cursor: pointer;
+}
+
+.añadirEliminarUsuario .button1{
+  display:none;
+}
+
+
+
 /*---------------------Administrador--------------------*/
 /*---------------------Contenido---------------------*/
 
@@ -141,13 +186,13 @@ body{
 
 /*Proyectos*/
 
-#proyectos div{
+#proyectos{
   background: rgba(138, 132, 223, 0.185);
 }
 
 /*Proyectos pendientes*/
 
-#proyectosPendientes div{
+#proyectosPendientes{
   background: rgba(138, 132, 223, 0.185);
 }
 
@@ -406,7 +451,7 @@ input[type="textI"],.box input[type="passwordI"]{
   border-radius: 24px;
   transition: 0.25s;
 }
-input[type="text"]:focus,.box input[type="password"]:focus{
+input[type="text"]:focus,.box input[type="passwordI"]:focus{
   width: 280px;
 }
  input[type= "submit"]{

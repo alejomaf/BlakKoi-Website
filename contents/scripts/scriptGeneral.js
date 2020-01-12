@@ -25,23 +25,39 @@ function aparecerBarra(){
     $('#square').slideToggle(800);
   }
   function cargarZon(aux){
-    /*Estamos cargando en el elemento square el elemento con id= "servicios" de servicios.html
-    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
-    inserción de código */
     $('#square').empty();
     $('#square').slideToggle(800);
     setTimeout(function(){$('#square').load('../special-views/zonaPersonal.html '+aux);},800);
     $('#square').slideToggle(800);
   }
   function cargarAdm(aux){
-    /*Estamos cargando en el elemento square el elemento con id= "servicios" de servicios.html
-    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
-    inserción de código */
     $('#square').empty();
     $('#square').slideToggle(800);
     setTimeout(function(){$('#square').load('../special-views/admin-view.html '+aux);},800);
     $('#square').slideToggle(800);
   }
+
+  function cargarCont(aux){
+    $('#square').empty();
+    $('#square').slideToggle(800);
+    setTimeout(function(){$('#square').load(aux);},800);
+    $('#square').slideToggle(800);
+  }
+  function cargarSquareAdmin(aux){
+    $('#square').empty();
+    $('#square').slideToggle(800);
+    setTimeout(function(){$('#square').load(aux);},800);
+    $('#square').slideToggle(800);
+  }
+
+  function cargarProy(aux){
+    idProyecto(aux);
+    $('#square').empty();
+    $('#square').slideToggle(800);
+    setTimeout(function(){$('#square').load("proyecto.php");},800);
+    $('#square').slideToggle(800);
+  }
+
 
 
   /*Secuencia del cambio de fondo de pantalla*/
@@ -68,4 +84,4 @@ function aparecerBarra(){
   }
   backgroundSequence();
 
-  
+ 

@@ -1,0 +1,206 @@
+html{
+    height: 100%;
+    width: 100%;
+  }
+    /*Cuerpo principal*/
+  
+  body{
+      background-image: url("../images/fondoInicio.jpeg");
+      font-family: "Lato", sans-serif;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  
+  
+     /*Cuadro principal*/
+  
+  #square {
+      height: 76vh; /*79vh*/
+      width: 80%; /*82vw*/
+      margin-top: 3%;
+      margin-right: 5%;
+      margin-left: 25vh;
+      margin-bottom: 2%;
+      background-color: rgba(255,255,255,.5);
+      transition: width .35s;
+      overflow-y: scroll;
+  
+      
+    }
+ 
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  
+  /*Gestión del contenido*/
+  #contenido{
+    margin-top: 0%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+  }
+  
+  
+  #contenido .proyecto{
+      width:100%;
+      text-align: center;
+      margin-top: 0%;
+      margin-bottom: 0%;
+      background-color: rgba(138, 55, 55, 0.5);
+      height: 500%;
+      display: inline-block;
+  }
+     #contenido .proyecto p{
+     text-align: left;
+     margin-left: 5%;
+    }
+
+    #contenido .proyecto .archivos{
+        width:85%;
+        height:10%;
+        margin-left: 7.5%;
+        background-color:  rgba(6, 255, 172, 0);
+        margin-top: 20%;
+    }
+    #imagen{
+        width:30%;
+        height:55%;
+        margin-top:0.5%;
+        margin-left:1%;
+        margin-right: 0%;
+        
+       
+       
+    }
+  
+    
+    /*Barra lateral*/
+  
+  #sidebar {
+      /*margin-left: 1.5%;*/
+      overflow-x: hidden; /*COMANDO MUY IMPORTANTE, lo oculta todo muy bien*/
+      overflow-y: scroll;
+      width: 22vh;
+      position: fixed;
+      /*border: 1px solid black;*/
+      transition: width .35s;
+      margin-right: 1.5%;
+      margin-top: 0%;
+    }
+    
+    #sidebar a {
+      background-color: rgba(255, 255, 255, 0.5);
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+    }
+    #sidebar .enlaces{
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    #sidebar .enlace{
+      margin: 0%;
+      display:inline-block;
+      background-color: rgba(255, 255, 255, 0);
+      color: black;
+      text-decoration: none;
+    }
+    #sidebar .imgh{
+      height: 3vh;
+      width: 3vh;
+    }
+  
+  #sidebar a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  #sidebar a.special {
+    background-color: skyblue;
+    color: white;
+  }
+  
+    #sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+  
+  
+  .btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 0.75% 1%;
+      font-size: 16px;
+    }
+  
+  .closer {
+    color: red;
+    font-size: 200%;
+    border: none;
+    background-color: dodgerblue;
+    cursor: pointer;
+    visibility: hidden;
+  }
+   ::-webkit-scrollbar {
+    display: none;
+  }
+
+  
+  #contenido tr td img{
+    width: 100%;
+    height: 75%;
+  }
+  
+
+  
+  .btn:hover {
+      background-color: RoyalBlue;
+    }
+    
+  
+  
+  
+  /*Para moviles*/
+    @media screen and (max-width: 479px) { /*ES 479*/
+      #sidebar {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-right: 0%;
+        margin-left: 0%;
+          }
+      .logo{
+        width: 25vh;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #square{
+        width:0%;
+        margin-left:0%;
+        margin-right:0%;
+      }
+      .closer{
+        visibility: visible;
+      }
+    }
+  
+    

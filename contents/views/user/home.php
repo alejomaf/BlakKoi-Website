@@ -1,9 +1,33 @@
+<?php
+  session_start();
+  require '../../connections/database.php';
+  require '../../connections/getData.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset = "utf-8">
 <!-- Cargamos el scrip de jQuery para poder realizar inserciones de codigo seguras-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../scripts/scriptGeneral.js"></script>
+
+<script> 
+//Redirección páginas
+var ubicacion=window.location.href;
+var texto=ubicacion.split("#");
+
+if(texto.length!=1){
+  switch(texto[1]){
+    case "home": cargar('#inicio'); break;
+    case "services": cargar('#servicios'); break;
+    case "solicitudPresupuesto": cargar('#presupuesto'); break;
+    case "portfolio": cargar('#portfolio'); break;
+    case "contact": cargar('#contacta'); break;
+    case "blog": cargar('#blog'); break;
+  }
+}
+</script>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +43,15 @@
 <!--FORMULARIO DE INICIO DE SESIÓN-->
 <div id="id01" class="modal">
   
-  <form class="box" action="index.html" method="POST">
+  <form class="box" action="login.php" method="POST">
       <img id="out" src="../../images/crossWhite.jpg" onclick="document.getElementById('id01').style.display='none'">
       <h1>Login</h1>
-      <input type="textI" placeholder="Enter Username" name="uname" required>
-      <input type="passwordI" placeholder="Enter Password" name="psw" required>
+      <input name="email" type="textI" placeholder="Enter Email" name="uname" required>
+      <input name="password" type="password" placeholder="Enter Password" name="psw" required>
       <input type="submit" name="Login" value="Login">
       <div class="contenedor">
-        <div><a href="registrarse.html">Recordar contraseña</a></div> <p></p>
-          <div> <a href="registrarse.html">Registrarse</a></div>
+        <div><a href="">Recordar contraseña</a></div> <p></p>
+          <div> <a href="signup.php">Registrarse</a></div>
       </div>
       
     </form>
@@ -45,7 +69,7 @@
     <a class="btn" href="#contact" onclick="cargar('#contacta');">Contacta</a>
     <a class="btn" href="#blog" onclick="cargar('#blog');">Blog</a>
     
-    <a class="btnSpe" onclick="document.getElementById('id01').style.display='block'"> Iniciar sesión</a>
+    <a class="btnSpe" style="cursor: pointer;" onclick="document.getElementById('id01').style.display='block'"> Iniciar sesión</a>
   </div>
   
   </div>
@@ -59,7 +83,7 @@
 
 
   <script>
-
+  
     /*Inicio*/
 
     var x=1;

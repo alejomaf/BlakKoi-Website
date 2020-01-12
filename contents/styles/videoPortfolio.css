@@ -1,0 +1,226 @@
+html{
+    height: 100%;
+    width: 100%;
+  }
+    /*Cuerpo principal*/
+  
+  body{
+      background-image: url("../images/fondoInicio.jpeg");
+      font-family: "Lato", sans-serif;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+   /*---------------------Contenidos genérico---------------------*/
+  
+   /*Gestion de usuarios*/
+  
+   #gestionUsuarios{
+     align-content: flex-start;
+   }
+   #gestionUsuarios .options_container{
+    align-content: flex-start;
+  }
+  .plus img, .trash img, .mail img, .addVideo img{
+    width: 7vh;
+  }
+  .options_container p{
+    text-align: center;
+    justify-content: center;
+  }
+  
+  #titulo{
+    background: rgba(116, 93, 143, 0.404);
+  }
+  #titulo p{
+    text-align: left;
+  }
+  
+  /*---------------------Contenidos genérico---------------------*/
+  
+  /*CUADRO PRINCIPAL*/
+  
+  #square {
+    height: 76vh; /*79vh*/
+    width: 80%; /*82vw*/
+    margin-top: 3%;
+    margin-right: 5%;
+    margin-left: 155px;
+    margin-bottom: 2%;
+    background-color: rgba(255,255,255,.5);
+    transition: width .35s;
+    overflow-y: scroll;
+    
+  }
+  
+  /*BARRA LATERAL*/
+  
+  #sidebar {
+    /*margin-left: 1.5%;*/
+    overflow-x: hidden; /*COMANDO MUY IMPORTANTE, lo oculta todo muy bien*/
+    overflow-y: scroll;
+    width: 150px;
+    position: fixed;
+    /*border: 1px solid black;*/
+    transition: width .35s;
+    margin-right: 1.5%;
+  }
+  
+  /*Barra escondida*/
+  
+  /*Contenido de las barra lateral*/
+  
+  #sidebar a {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  #sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  #sidebar a.special {
+  background-color: skyblue;
+  color: white;
+  }
+  
+  
+   h1{
+    margin-top: 15%;
+    color:white;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  ::placeholder{
+      color:black;
+  }
+   input[type="text"],.box input[type="password"]{
+    margin-top: 100px;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 40%;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    margin-top: 6%;;
+  }
+  input[type="text"]:focus,.box input[type="password"]:focus{
+    width: 280px;
+    border-color: #2ecc71;
+  }
+   input[type= "submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  .contenedor{
+   
+    margin-top: 15%;
+    
+  }
+  input[type= "registrar"],input[type="recordar"]{
+    border: 0;
+    background: none;
+    text-align: center;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    
+  }
+  
+   input[type= "submit"]:hover{
+    background: #2ecc71;
+  }
+  /*Hacemos que el enlace activo no lleve a ningun sitio*/
+ 
+  
+  #sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  /*Boton*/
+  
+  .btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 0.75% 1%;
+    font-size: 16px;
+  }
+  
+  .closer {
+  color: red;
+  font-size: 200%;
+  border: none;
+  background-color: dodgerblue;
+  cursor: pointer;
+  visibility: hidden;
+  }
+  
+  /*Elemento visual muy importante, oculta el scrollbar pero hace que siga funcionando
+  lo he aplicado a todos los elementos */
+  ::-webkit-scrollbar {
+  display: none;
+  }
+  /*Adaptaciones del contenido del recuadro, puede modificarse para adaptar el contenido que
+  mostreis, si encontrais el estilo adecuado y lo teneis escrito ya en css decidmelo y hago un 
+  script para aplicarlo cuando se cambie de ventana*/
+  
+  #contenido tr td img{
+  width: 100%;
+  height: 75%;
+  }
+  
+  /* Darker background on mouse-over */
+  
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+  
+  
+  /*Acomodando la barra segun el tamaño*/
+  
+  
+  /*Para moviles*/
+  @media screen and (max-width: 479px) { /*ES 479*/
+    #sidebar {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      margin-right: 0%;
+      margin-left: 0%;
+        }
+    .logo{
+      width: 25vh;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #square{
+      width:0%;
+      margin-left:0%;
+      margin-right:0%;
+    }
+    .closer{
+      visibility: visible;
+    }
+  }
+  
