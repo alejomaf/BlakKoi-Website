@@ -196,14 +196,11 @@ CREATE TABLE `videos_proyecto` (
 
 INSERT INTO `videos_proyecto` (`idVideo`, `tituloVideo`, `descripcionVideo`, `enlace`, `id_proyecto`) VALUES
 (1, '', '', 'ert', 14),
-(2, 'Hola', 'Hola2', 'Hola3', 14),
+(2, '', '', 'https://www.youtube.com/watch?v=Z60Un18SrNg', 14),
 (3, '', '', 'https://www.youtube.com/watch?v=uEtKb-srlK0', 13),
 (4, '', '', 'asdadsa', 20),
-(12, 'Ejemplo1', 'Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo.', 'https://www.youtube.com/watch?v=FgttOW3FroQ', 1),
-(13, 'Ejemplo 2', 'Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo.', 'https://www.youtube.com/watch?v=FgttOW3FroQ', 1),
-(14, 'Buen video', 'Un buen vídeo bastante bien hecho.', 'https://www.youtube.com/watch?v=GpYzK6c4c7s', 1),
-(15, 'El mejor violín', 'Uno de los mejores vídeos que podremos ver en nuestros tiempos.', 'https://www.youtube.com/watch?v=_7xXvjUEnb4', 1),
-(16, 'Pulled Pork', 'La carne deshilachada deshaciéndote en tu boca, no hay mejor sensación que esa.', 'https://www.youtube.com/watch?v=eURj_CMmcLc', 1);
+(12, 'Ejemplo1', 'Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo.', 'https://www.youtube.com/embed/787pabrW5Ds', 123),
+(13, 'Ejemplo 2', 'Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo. Esto es un ejemplo.', 'https://www.youtube.com/embed/787pabrW5Ds', 123);
 
 --
 -- Índices para tablas volcadas

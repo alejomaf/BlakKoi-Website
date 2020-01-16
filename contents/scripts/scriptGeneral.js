@@ -44,6 +44,28 @@
     $('#content').slideToggle(800);
   }
 
+  function cargarCont(aux){
+    $('#square').empty();
+    $('#square').slideToggle(800);
+    setTimeout(function(){$('#square').load(aux);},800);
+    $('#square').slideToggle(800);
+  }
+  function cargarSquareAdmin(aux){
+    $('#square').empty();
+    $('#square').slideToggle(800);
+    setTimeout(function(){$('#square').load(aux);},800);
+    $('#square').slideToggle(800);
+  }
+
+  function cargarProy(aux){
+    idProyecto(aux);
+    $('#square').empty();
+    $('#square').slideToggle(800);
+    setTimeout(function(){$('#square').load("proyecto.php");},800);
+    $('#square').slideToggle(800);
+  }
+
+
 
 
   /*Secuencia del cambio de fondo de pantalla*/

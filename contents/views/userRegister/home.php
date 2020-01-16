@@ -25,13 +25,9 @@
 <meta charset = "utf-8">
 <!-- Cargamos el scrip de jQuery para poder realizar inserciones de codigo seguras-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../scripts/scriptGeneral.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+<script src="../../scripts/scriptGeneral.js"> </script>
 
 <script>
-cargar('#inicio');
 if(texto.length!=1){
   switch(texto[1]){
     case "home": cargar('#inicio'); break;
@@ -54,44 +50,73 @@ if(texto.length!=1){
 
 <!--Cuerpo-->
 <body id="backgroundImages">
-<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				
-	  		<h1><a href="home.php" class="logo"><img src="../../images/logoSinLetrasCircular.png"
-        style="max-width:100%;"></a></h1>
-        <ul id="cambioActivo" class="list-unstyled components mb-5">
-
-                <li class="boton"><a class="btnSpe" href="../../connections/logout.php">Cerrar sesión</a></li>
-                <li><a href="zonaPersonal.php">ZonaPersonal</a></li>
-                <li class="active"><a href="#home" onclick="cargar('#inicio');">Inicio</a></li>
-                <li class="boton"><a  href="#services" onclick="cargar('#servicios');">Servicios</a></li>
-                <li class="boton"><a href="#solicitudPresupuesto" onclick="cargar('#presupuesto');">Solicitud presupuesto</a></li>
-                <li class="boton"><a href="#porfolio" onclick="cargarCont('portfolio.php');">Portfolio</a></li>
-                <li class="boton"><a href="#contact" onclick="cargar('#contacta');">Contacta</a></li>
-                <li class="boton"><a href="#blog" onclick="cargar('#blog');">Blog</a></li>
-                
-           
-        </ul>
-
-      </nav>
+    <p id="user"><?php printf($results['email']);?></p>
+    <button class="closer" title="Close sidebar" onclick=aparecerBarra()>☰</button>
+    <div id="bar"> 
+        <div class="logo"><img src="../../images/logoSinLetrasCircular.png"
+        style="max-width:100%;"></div>
+  <div id="sidebar">  
+      <a class="active" href="#home" onclick="cargar('#inicio');">Inicio</a>
+      <a class="special" href="zonaPersonal.php">ZonaPersonal</a>
+      <a class="btn" href="#services" onclick="cargar('#servicios');">Servicios</a>
+      <a class="btn" href="#solicitudPresupuesto" onclick="cargar('#presupuesto');">Solicitud presupuesto</a>
+      <a class="btn" href="#portfolio" onclick="cargar('#portfolio');">Portfolio</a>
+      <a class="btn" href="#contact" onclick="cargar('#contacta');">Contacta</a>
+      <a class="btn" href="#blog" onclick="cargar('#blog');">Blog</a>
       
-      <div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary">
-	          <i class="fa fa-bars"></i>
-	          <span class="sr-only">Toggle Menu</span>
-	        </button>
-      </div>
+      <a class="btnSpe" href="../../connections/logout.php">Cerrar sesión</a>
+  </div>
+    </div>
 
-        <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5 pt-5">
 
-      </div>
-      <p id="user"><?php printf($results["email"]);?></p>
-</div>
+  <div class="content">
+    <div id="square"> 
+        
+    </div>
+  </div>
 
-<script src="../../scripts/cambioTexto.js"></script>
-<script src="../../scripts/finalPagina.js"></script>
+<script>
+/*Inicio*/
+    
+var x=1;
+    $('#square').load('../generic-views/generic-views.html #inicio');
+    function temporizador(){
+      cambiarTexto(x);
+      if(x==4)x=1;else x++;
+    }
+    setInterval(temporizador,10000);
 
+    function cambiarTexto(aux2){
+      var modal = document.getElementById('texttop'+aux2);
+      var borrar;
+      if(aux2==1){
+      borrar=document.getElementById('texttop4');
+      }else{
+      borrar=document.getElementById('texttop'+(aux2-1));
+      }
+      borrar.style.display="none";
+      modal.style.display="block";
+    }
+    
+    /*Botones activos*/
+
+    // Coge el cuadro del contenido
+    var btnContainer = document.getElementById("sidebar");
+
+    // Coge todos los botones de la clase boton dentro del div
+    var btns = btnContainer.getElementsByClassName("btn");
+
+    btnContainer.getElementsByClassName("active")[0].addEventListener("click", cambioBotones);
+    // Va cambiando los botones
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", cambioBotones);
+    }
+    function cambioBotones(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace("active", "btn");
+        this.className += " active";
+      }
+</script>
 </body> 
 </html>
 
