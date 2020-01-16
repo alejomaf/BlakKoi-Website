@@ -46,6 +46,35 @@
     <!--Contenido del contacta-->
 
     <div id="contacta">
+        <div class="modal-body">
+            <form action="#" method="POST" id=contactando>
+            <div class="form-group">
+              <label for="validationDefault01"><h2>Contáctanos</h2></label>
+              <label for="validationDefault01"><h5>Nos pondremos en contacto con usted en menos de 24 horas.</h5></label>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Nombre o Empresa</b></label>
+              <input name="nombre" class="form-control" placeholder="Escriba su nombre o empresa"  required>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Correo Electrónico</b></label>
+              <input name="email" class="form-control" placeholder="Escriba el correo" type="mail" required>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Asunto</b></label>
+              <br>
+              <label for="validationDefault02">Esto es una pregunta de ejemplo, esto es una pregunta de ejemplo</label>
+            <textarea name="pregunta1" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+                  <button type="submit" form="contactando" value="Submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </div>
+            
+          </form>
+
+
+            </div>
         <div style="text-align:center">
             <h2>Contáctanos</h2>
             <p>Accede a nuestras redes sociales, o escribenos un mensaje</p>
@@ -66,28 +95,47 @@
     <!--Contenido de la solicitud de presupuesto-->
 
     <div id='presupuesto'>
-        <form class="boxPres" action="index.html" method="POST">
-            <p>¿Que tipo de proyecto quieres?¿Cuál sería la duración del mismo?</p>
-            <p id="descripcion">Esto es un ejemplo de una descripcion. Esto es un ejemplo de una descripcion. 
-                Esto es un ejemplo de una descripcion. Esto es un ejemplo de una descripcion. 
-                Esto es un ejemplo de una descripcion. 
-                Esto es un ejemplo de una descripcion.</p>
-            <input type="text" placeholder="Escribe tu respuesta">
-            <p>¿Que tipo de proyecto quieres?¿Cuál sería la duración del mismo?</p>
-            <p id="descripcion">Esto es un ejemplo de una descripcion. Esto es un ejemplo de una descripcion. 
-                    Esto es un ejemplo de una descripcion. Esto es un ejemplo de una descripcion. 
-                    Esto es un ejemplo de una descripcion. 
-                    Esto es un ejemplo de una descripcion.</p>
-            <input type="text" placeholder="Escribe tu respuesta">
-            <p>¿Que tipo de proyecto quieres?¿Cuál sería la duración del mismo?</p>
-            <p id="descripcion">Esto es un ejemplo de una descripcion. Esto es un ejemplo de una descripcion. 
-                    Esto es un ejemplo de una descripcion. Esto es un ejemplo de una descripcion. 
-                    Esto es un ejemplo de una descripcion. 
-                    Esto es un ejemplo de una descripcion.</p>
-            <input type="text" placeholder="Escribe tu respuesta">
-            <input type="button" placeholder="Enviar formulario" value="Enviar formulario">
-        </form>
-    </div>
+        <div class="modal-body">
+            <form action="solicitudPresupuesto.php" method="POST" id=sendApplication>
+            <div class="form-group">
+              <label for="validationDefault01"><h2>Solicita tu presupuesto</h2></label>
+              <label for="validationDefault01"><h5>Responda a nuestras cuestiones referentes a la producción para que le podamos estimar un presupuesto. Nos pondremos en contacto con usted en menos de 24 horas.</h5></label>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Nombre o Empresa</b></label>
+              <input name="nombre" class="form-control" placeholder="Escriba su nombre o empresa"  required>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Correo Electrónico</b></label>
+              <input name="email" class="form-control" placeholder="Escriba el correo" type="mail" required>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Pregunta ejemplo 1</b></label>
+              <br>
+              <label for="validationDefault02">Esto es una pregunta de ejemplo, esto es una pregunta de ejemplo</label>
+            <textarea name="pregunta1" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Pregunta ejemplo 2</b></label>
+              <br>
+              <label for="validationDefault02">Esto es una pregunta de ejemplo, esto es una pregunta de ejemplo</label>
+            <textarea name="pregunta2" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="validationDefault01"><b>Pregunta ejemplo 3</b></label>
+                <br>
+              <label for="validationDefault02">Esto es una pregunta de ejemplo, esto es una pregunta de ejemplo</label>
+            <textarea name="pregunta3" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          
+            <div class="modal-footer">
+                  <button type="submit" form="sendApplication" value="Submit" class="btn btn-primary">Mandar solicitud</button>
+                </div>
+              </div>
+            
+          </form>
+            </div>
+        </div>
 
     <!--Contenido del blog-->
 
