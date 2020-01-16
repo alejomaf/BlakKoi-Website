@@ -4,7 +4,7 @@
 
     <div id="gestionUsuarios">
 
-        <div class="options_container">
+         class="options_container">
 
           <div class="addremove">
             <div class="añadirEliminarUsuario">
@@ -25,19 +25,69 @@
          <div class="users_container">
     
             <div class="grid-container">
-            <div><u>Usuario de ejemplo</u><a id="middle">Mensajes nuevos: 0</a><a id="right">Proyectos activos: 0</a></div>
-            <div><u>Usuario de ejemplo</u></div>
-            <div><u>Usuario de ejemplo</u></div>
-            <div><u>Usuario de ejemplo</u></div>
-            <div><u>Usuario de ejemplo</u></div>
-            <div><u>Usuario de ejemplo</u></div>
-            <div><u>Usuario de ejemplo</u></div>
-            <div><u>Usuario de ejemplo</u></div>
+              <?php
+              $consulta="SELECT * FROM users";
+              $records=$conn->prepare($consulta);
+              $records->execute();
+              $numero=0;
+              $uno=1;
+              if($records->rowcount() == 0){
+                echo 'No hay usuarios';
+                }
+              if($records->rowcount() >0){
+                while($row = $records->fetch(PDO::FETCH_ASSOC)){
+                   $numero=$numero + $uno;
+                   if(($numero % 2) == 0){
+                       echo ' <div class="container darker">
+                              <p><a class="btn btn-link" href="unicoUsuario.php?id=' . $row['id'] .'">' . $row['email'] . '</a></p>
+                              </div>';
+                              
+                       }
+                   else{
+                        echo ' <div class="container">
+                               <p><a class="btn btn-link" href="unicoUsuario.php?id=' . $row['id'] .'">' . $row['email'] . '</a></p>
+                               </div>';
+                } 
+              }
+            }
+      ?>
            </div>
     
         </div>
     
+
+    <div id="anadirVideo">
+        <form action="añadirVideo.php" method="POST">
+            <input type="text" placeholder="Enlace" name="Enlace">
+             <input type="text" placeholder="Nombre" name="Nombre">
+             <input type="text" placeholder="Descripcion" name="Descripcion">
+             <input type="submit" name="Login" value="Añadir">
+           </form>
     </div>
 
+    <div id="gestionProyectos">
+<form action="gestionarProyectos.php" method="POST">
+            
+  <label for="fname">Nombre</label>
+  <input type="text"  name="nombre" placeholder="">
+
+  <label for="lname">Fecha finalización</label>
+  <input type="text" name="fecha" placeholder="">
+
+  <label for="lname">Coste total</label>
+  <input type="text" name="coste" placeholder="">
+
+  <label for="subject">Información</label>
+  <input type="text" name="informacion" placeholder="" style="height:170px">
+
+  <input type="submit" value="Modificar">
+</form>
+<form action="gestionarProyectos.php" method="POST">
+  
+  <label for="fname">Enlace para video</label>
+  <input type="text"  name="enlace" placeholder="">
+  <input type="submit" value="Añadir">
+</form>
+    </div>
 </body>
 </html>

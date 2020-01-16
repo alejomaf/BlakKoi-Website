@@ -1,47 +1,49 @@
 /*Funcion que hace aparecer y desaparecer la barra de busqueda*/
 
-function aparecerBarra(){
-    var cuadrado=document.getElementById("square");
-    var barra=document.getElementById("sidebar");
 
-    if(barra.style.width!="0%"){
-        barra.style.width="0%";
-        cuadrado.style.width="100%";
-        }
-    else {
-        barra.style.width="100%";
-        cuadrado.style.width="0%";
-        }
-    
-  }
-  
   function cargar(aux){
-    /*Estamos cargando en el elemento square el elemento con id= "servicios" de servicios.html
+    /*Estamos cargando en el elemento content el elemento con id= "servicios" de servicios.html
     para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
     inserción de código */
-    $('#square').empty();
-    $('#square').slideToggle(800);
-    setTimeout(function(){$('#square').load('../generic-views/generic-views.html '+aux);},800);
-    $('#square').slideToggle(800);
+    $('#content').empty();
+    $('#content').slideToggle(800);
+    setTimeout(function(){$('#content').load('../generic-views/generic-views.html '+aux);},800);
+    $('#content').slideToggle(800);
   }
   function cargarZon(aux){
-    /*Estamos cargando en el elemento square el elemento con id= "servicios" de servicios.html
-    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
-    inserción de código */
-    $('#square').empty();
-    $('#square').slideToggle(800);
-    setTimeout(function(){$('#square').load('../special-views/zonaPersonal.html '+aux);},800);
-    $('#square').slideToggle(800);
+    $('#content').empty();
+    $('#content').slideToggle(800);
+    setTimeout(function(){$('#content').load('../special-views/zonaPersonal.php '+aux);},800);
+    $('#content').slideToggle(800);
   }
   function cargarAdm(aux){
-    /*Estamos cargando en el elemento square el elemento con id= "servicios" de servicios.html
-    para adaptar los estilos recomiendo hacerlo primero manualmente para dejar preparada la
-    inserción de código */
-    $('#square').empty();
-    $('#square').slideToggle(800);
-    setTimeout(function(){$('#square').load('../special-views/admin-view.html '+aux);},800);
-    $('#square').slideToggle(800);
+    $('#content').empty();
+    $('#content').slideToggle(800);
+    setTimeout(function(){$('#content').load('../special-views/admin-view.html '+aux);},800);
+    $('#content').slideToggle(800);
   }
+
+  function cargarCont(aux){
+    $('#content').empty();
+    $('#content').slideToggle(800);
+    setTimeout(function(){$('#content').load(aux);},800);
+    $('#content').slideToggle(800);
+  }
+  function cargarcontentAdmin(aux){
+    $('#content').empty();
+    $('#content').slideToggle(800);
+    setTimeout(function(){$('#content').load(aux);},800);
+    $('#content').slideToggle(800);
+  }
+
+  function cargarProy(aux){
+    idProyecto(aux);
+    $('#content').empty();
+    $('#content').slideToggle(800);
+    setTimeout(function(){$('#content').load("proyecto.php");},800);
+    $('#content').slideToggle(800);
+  }
+
 
 
   /*Secuencia del cambio de fondo de pantalla*/
@@ -67,5 +69,5 @@ function aparecerBarra(){
     }
   }
   backgroundSequence();
-
   
+ 

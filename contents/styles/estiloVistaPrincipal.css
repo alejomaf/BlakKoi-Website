@@ -3,11 +3,56 @@ html{
 }
   /*Cuerpo principal*/
 
+.card{
+  min-width: 300px;
+}
 body{
     font-family: "Lato", sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+
+ /*Gestion de usuarios*/
+  
+ #user{
+   position: fixed;
+   right: 0; 
+    top: 0;
+   color: black;
+   text-decoration: underline black;
+ }
+ #gestionUsuarios{
+  align-content: flex-start;
+}
+#gestionUsuarios .options_container{
+ align-content: flex-start;
+}
+.plus img, .trash img, .mail img, .addVideo img{
+ width: 7vh;
+}
+.options_container p{
+ text-align: center;
+ justify-content: center;
+}
+
+#titulo{
+ background: rgba(116, 93, 143, 0.404);
+}
+#titulo p{
+ text-align: left;
+}
+.contenedor_oscuro{
+  background: rgba(0, 0, 0, 0.404);
+  cursor: pointer;
+}
+.contenedor_claro{
+  background: rgba(184, 160, 160, 0.404);
+  cursor: pointer;
+}
+
+
+
 
 /*---------------------Administrador--------------------*/
 /*---------------------Contenido---------------------*/
@@ -36,18 +81,9 @@ body{
 
  /*Gestion de usuarios*/
 
- #gestionUsuarios{
-   align-content: flex-start;
- }
- #gestionUsuarios .options_container{
-  align-content: flex-start;
-}
-.plus img, .trash img, .mail img, .addVideo img{
-  width: 7vh;
-}
-.options_container p{
-  text-align: center;
-  justify-content: center;
+#icono{
+  width: 20px;
+  height: 20px;
 }
 
 #titulo{
@@ -82,36 +118,8 @@ body{
    height: 35vh;
 }
 
-/*CONTACTA*/
-#contacta{
-  display: block;
-  text-align: center;
-  margin-top: 0%;
-  width: 70vh;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 10vh;
-}
-#contacta form{
-  display: inline-block;
-  text-align: left;
-}
   
 /*FORMULARIO PRESUPUESTO*/
-#presupuesto{
-  display: block;
-  text-align: center;
-  margin-top: 0%;
-  width: 70vh;
-  align-items: center;
-  justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 10vh;
-}
 #descripcion{
   font-size: small;
 }
@@ -141,13 +149,13 @@ body{
 
 /*Proyectos*/
 
-#proyectos div{
+#proyectos{
   background: rgba(138, 132, 223, 0.185);
 }
 
 /*Proyectos pendientes*/
 
-#proyectosPendientes div{
+#proyectosPendientes{
   background: rgba(138, 132, 223, 0.185);
 }
 
@@ -166,8 +174,6 @@ body{
   margin-right: 48%;
 }
 
-/*Datos personales*/
-
 
 /*---------------------Contenidos genérico---------------------*/
 
@@ -179,104 +185,129 @@ body{
   position:relative;
 }
 
-/*Cuadro INICIO*/
-div#texttop { 
-	color: #fff;
-	width: 30%;
-	top: 50%;
-	left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-	padding: 2rem;
-	background: rgba(0,0,0,0.3);
-	font-family: Oxygen, sans-serif;
-  position:absolute;
-}
+
 
 /*CUADRO PRINCIPAL*/
 
-#square {
-  height: 92vh; /*79vh*/
-  width: 88%; /*82vw*/
-  margin-top: 2%;
-  margin-right: 5%;
-  margin-left: 155px;
-  margin-bottom: 2%;
+
+/*BARRA LATERAL*/
+.custom-menu {
+  position: fixed;}
+.btnSpe{
+  background-color: gray;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #212121;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative; 
+  height: 100vh  ; /*79vh*/
+  transition: width .35s;
+  overflow-y: scroll;
+}
+  #sidebar .h6 {
+    color: #fff; }
+  #sidebar.active {
+    margin-left: -250px; }
+    #sidebar.active .custom-menu {
+      margin-right: -50px; }
+  #sidebar h1 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px; }
+    #sidebar h1 .logo {
+      color: #fff;
+      display: block;
+      padding: 10px 30px;
+      background: rgba(255, 255, 255, 0); }
+  #sidebar ul.components {
+    padding: 0; }
+  #sidebar ul li {
+    font-size: 16px; }
+    #sidebar ul li > ul {
+      margin-left: 10px; }
+      #sidebar ul li > ul li {
+        font-size: 14px; }
+    #sidebar ul li a {
+      padding: 15px 30px;
+      display: block;
+      color: rgba(255, 255, 255, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebar ul li a:hover {
+        color: #fff;
+        background: #2f89fc;
+        border-bottom: 1px solid #2f89fc; }
+    #sidebar ul li.active > a {
+      background: transparent;
+      color: #fff; }
+      #sidebar ul li.active > a:hover {
+        background: #2f89fc;
+        border-bottom: 1px solid #2f89fc; }
+  @media (max-width: 991.98px) {
+    #sidebar {
+      margin-left: -250px; }
+      #sidebar.active {
+        margin-left: 0; }
+      #sidebar .custom-menu {
+        margin-right: -60px !important;
+        top: 10px !important; } }
+  #sidebar .custom-menu {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    margin-right: -50px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+    @media (prefers-reduced-motion: reduce) {
+      #sidebar .custom-menu {
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none; } }
+a[data-toggle="collapse"] {
+  position: relative; }
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+@media (max-width: 991.98px) {
+  #sidebarCollapse span {
+    display: none; } }
+
+#content {
+  width: 100%;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  height: 80vh  ; /*79vh*/
   background-color: rgba(255,255,255,.5);
   transition: width .35s;
   overflow-y: scroll;
-  border-radius: 15px;
-  position: fixed;
 }
-
-/*BARRA LATERAL*/
-
-#bar{
-  position: fixed;;
-  width:150px;
-}
-#sidebar{
-    /*margin-left: 1.5%;*/
-    overflow-x: hidden; /*COMANDO MUY IMPORTANTE, lo oculta todo muy bien*/
-    overflow-y: scroll;
-    width: 150px;
-    position: fixed;
-    /*border: 1px solid black;*/
-    transition: width .35s;
-    margin-right: 1.5%;
-    border-radius: 15px;
-  }
-#content{
-  border-radius: 15px;
-}
-
-
-  /*Barra escondida*/
-  
-  /*Contenido de las barra lateral*/
-
-#sidebar a {
-    background-color: rgba(255, 255, 255, 0.5);
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-  }
-
-#sidebar a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-#sidebar a.special {
-  background-color: skyblue;
-  color: white;
-}
-
-  /*Hacemos que el enlace activo no lleve a ningun sitio*/
-  a.active:link, a.active:visited{}
-  
-#sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-  }
-
-
-/*Botón iniciar sesión*/
-#sidebar .btnSpe {
-    background: DodgerBlue;
-    color: white;
-  }
-
   
 
-.closer {
-  color: red;
-  font-size: 200%;
-  border: none;
-  background-color: dodgerblue;
-  cursor: pointer;
-  visibility: hidden;
-  position:fixed;
-}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.5); }
+
+
+  /*TERMINA LA BARRA LATERAL*/
+
+
 
 /*Elemento visual muy importante, oculta el scrollbar pero hace que siga funcionando
 lo he aplicado a todos los elementos */
@@ -294,155 +325,12 @@ script para aplicarlo cuando se cambie de ventana*/
 
 /* Darker background on mouse-over */
 
-.btn:hover {
-    background-color: RoyalBlue;
-  }
-  
 
 /*Acomodando la barra segun el tamaño*/
 
 
-/*Para moviles*/
-  @media screen and (max-width: 479px) { /*ES 479*/
-    #sidebar {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.5);
-      margin-right: 0%;
-      margin-left: 0%;
-        }
-    .logo{
-      width: 25vh;
-      height: auto;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #square{
-      width:0%;
-      margin-left:0%;
-      margin-right:0%; 
-      border-radius: 15px;
-    }
-    .closer{
-      visibility: visible;
-    }
-  }
-
 
   /*Entrada de texto en formularios*/
   
-  /*Estilo bueno*/
-  input[type=text], input[type=email], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
   
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    margin-left: 45%;
-    width: 20%;
-  }
 
-/*Este es el popup del inicio de sesión*/
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(255, 255, 255, 0.37);
-  padding-top: 50px;
-}
-/*Botón de salir*/
-#out{
-  position: fixed;
-  width: 35px;
-  height: 35px;
-  float: right;
-  margin-left: 150px;
-  margin-top: 10px;
-}
-/*Cuadro pricipal*/
-.box{
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background: black;
-  text-align: center;
-  border-radius: 15px;
-}
-.box h1{
-  margin-top: 15%;
-  color:white;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-input[type="textI"],.box input[type="passwordI"]{
-  margin-top: 100px;
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #3498db;
-  padding: 14px 10px;
-  width: 80%;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
-}
-input[type="text"]:focus,.box input[type="password"]:focus{
-  width: 280px;
-}
- input[type= "submit"]{
-  border: 0;
-  background: none;
-  display: block;
-  width: 200px;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #2ecc71;
-  padding: 14px 40px;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
-  cursor: pointer;
-}
-a{
-  color: white;
-}
-.contenedor{
-  margin-top: 5%;
-}
-
-input[type= "registrar"],input[type="recordar"]{
-  border: 0;
-  background: none;
-  text-align: center;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
-  cursor: pointer;
-  
-}
-
-.box input[type= "submit"]:hover{
-  background: #2ecc71;
-}
