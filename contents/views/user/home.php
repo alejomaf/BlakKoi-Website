@@ -11,45 +11,8 @@
 <!-- Cargamos el scrip de jQuery para poder realizar inserciones de codigo seguras-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../scripts/scriptGeneral.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-<!--Iniciar sesión-->
-<div class="modal fade" id="iniciarSesion" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-
-      <form action="login.php" method="POST" id=login>
-        <div class="form-group">
-          <label for="validationDefault01">Correo electrónico</label>
-          <input name="email" class="form-control" placeholder="Enter Email" name="uname" required>
-        </div>
-        <div class="form-group">
-          <label for="validationDefault01">Nueva contraseña</label>
-          <input name="password" class="form-control" type="password" placeholder="Enter Password" name="psw" required>
-        </div>
-
-        
-    </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Registrarse</button>
-        <button type="submit" form="login" value="Submit" class="btn btn-primary">Iniciar sesión</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script> 
-cargar('#inicio');
 //Redirección páginas
 var ubicacion=window.location.href;
 var texto=ubicacion.split("#");
@@ -59,7 +22,7 @@ if(texto.length!=1){
     case "home": cargar('#inicio'); break;
     case "services": cargar('#servicios'); break;
     case "solicitudPresupuesto": cargar('#presupuesto'); break;
-    case "portfolio": cargarCont('portfolio.php'); break;
+    case "portfolio": cargar('#portfolio'); break;
     case "contact": cargar('#contacta'); break;
     case "blog": cargar('#blog'); break;
   }
@@ -77,44 +40,104 @@ if(texto.length!=1){
 <!--Cuerpo-->
 <body id="backgroundImages">
 
-<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				
-	  		<h1><a href="home.php" class="logo"><img src="../../images/logoSinLetrasCircular.png"
-    style="max-width:100%;"></a></h1>
-        <ul id="cambioActivo" class="list-unstyled components mb-5">
-
-                <li><a class="btnSpe" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#iniciarSesion"> Iniciar sesión</a></li>
-
-                <li class="active"><a href="#home" onclick="cargar('#inicio');">Inicio</a></li>
-                <li class="boton"><a  href="#services" onclick="cargar('#servicios');">Servicios</a></li>
-                <li class="boton"><a href="#solicitudPresupuesto" onclick="cargar('#presupuesto');">Solicitud presupuesto</a></li>
-                <li class="boton"><a href="#porfolio" onclick="cargarCont('portfolio.php');">Portfolio</a></li>
-                <li class="boton"><a href="#contact" onclick="cargar('#contacta');">Contacta</a></li>
-                <li class="boton"><a href="#blog" onclick="cargar('#blog');">Blog</a></li>
-                
-           
-        </ul>
-
-    	</nav>
-      <div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary">
-	          <i class="fa fa-bars"></i>
-	          <span class="sr-only">Toggle Menu</span>
-	        </button>
-        </div>
-        <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5 pt-5">
-
+<!--FORMULARIO DE INICIO DE SESIÓN-->
+<div id="id01" class="modal">
+  
+  <form class="box" action="login.php" method="POST">
+      <img id="out" src="../../images/crossWhite.jpg" onclick="document.getElementById('id01').style.display='none'">
+      <h1>Login</h1>
+      <input name="email" type="textI" placeholder="Enter Email" name="uname" required>
+      <input name="password" type="password" placeholder="Enter Password" name="psw" required>
+      <input type="submit" name="Login" value="Login">
+      <div class="contenedor">
+        <div><a href="">Recordar contraseña</a></div> <p></p>
+          <div> <a href="signup.php">Registrarse</a></div>
       </div>
+      
+    </form>
 </div>
+
+  <button class="closer" title="Close sidebar" onclick=aparecerBarra()>☰</button>
+  <div id="bar"> 
+      <div class="logo"><img src="../../images/logoSinLetrasCircular.png"
+      style="max-width:100%;"></div>
+  <div id="sidebar"> 
+    <a class="active" href="#home" onclick="cargar('#inicio');">Inicio</a>
+    <a class="btn" href="#services" onclick="cargar('#servicios');">Servicios</a>
+    <a class="btn" href="#solicitudPresupuesto" onclick="cargar('#presupuesto');">Solicitud presupuesto</a>
+    <a class="btn" href="#porfolio" onclick="cargar('#portfolio');">Portfolio</a>
+    <a class="btn" href="#contact" onclick="cargar('#contacta');">Contacta</a>
+    <a class="btn" href="#blog" onclick="cargar('#blog');">Blog</a>
     
+    <a class="btnSpe" style="cursor: pointer;" onclick="document.getElementById('id01').style.display='block'"> Iniciar sesión</a>
+  </div>
+  
+  </div>
 
 
+  <div class="content">
+    <div id="square"> 
+         
+    </div>
+  </div>
 
 
+  <script>
+  
+    /*Inicio*/
 
-<script src="../../scripts/cambioTexto.js"></script>
-<script src="../../scripts/finalPagina.js"></script>
+    var x=1;
+    $('#square').load('../generic-views/generic-views.html #inicio');
+    function temporizador(){
+      cambiarTexto(x);
+      if(x==4)x=1;else x++;
+    }
+    setInterval(temporizador,10000);
+
+    function cambiarTexto(aux2){
+      var modal = document.getElementById('texttop'+aux2);
+      var borrar;
+      if(aux2==1){
+      borrar=document.getElementById('texttop4');
+      }else{
+      borrar=document.getElementById('texttop'+(aux2-1));
+      }
+      borrar.style.display="none";
+      modal.style.display="block";
+    }
+    
+    /*Botones activos*/
+
+    // Coge el cuadro del contenido
+    var btnContainer = document.getElementById("sidebar");
+
+    // Coge todos los botones de la clase boton dentro del div
+    var btns = btnContainer.getElementsByClassName("btn");
+
+    btnContainer.getElementsByClassName("active")[0].addEventListener("click", cambioBotones);
+    // Va cambiando los botones
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", cambioBotones);
+    }
+    function cambioBotones(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace("active", "btn");
+        this.className += " active";
+      }
+
+
+    /*Cuadro de inicio de sesión*/
+
+    // Coge el cuadro de inicio
+    var modal = document.getElementById('id01');
+    
+    // Cuando el usuario clicke fuera se cierre el cuadro de inicio
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+
 </body> 
 </html>
